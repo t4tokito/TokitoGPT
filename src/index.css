@@ -1,0 +1,27 @@
+/* ===== CSS Reset ===== */
+@import "tailwindcss";
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.pixel-font {
+  font-family: "Pixelify Sans", system-ui;
+  font-weight: 400;
+  font-style: bold;
+}
+.boldonse-regular {
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.lilita-one-regular {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.oneset-regular {
+  font-family: "Oneset", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
