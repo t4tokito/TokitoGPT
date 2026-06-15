@@ -146,24 +146,24 @@ const App = () => {
       <div className='relative z-10 flex flex-col w-full max-w-4xl h-full px-3 md:px-6 py-4'>
 
         {/* header */}
-        <div className='terminal rounded-2xl px-5 py-3 flex items-center justify-between shrink-0'>
-          <div className='flex items-center gap-3'>
-            <div className='relative'>
-              <img src={muichiro} alt="Muichiro" className='w-11 h-11 rounded-full object-cover border border-[#85afaa]/40 glow-ring' />
+        <div className='terminal rounded-2xl px-3 md:px-5 py-3 flex items-center justify-between gap-2 shrink-0'>
+          <div className='flex items-center gap-3 min-w-0'>
+            <div className='relative shrink-0'>
+              <img src={muichiro} alt="Muichiro" className='w-10 h-10 md:w-11 md:h-11 rounded-full object-cover border border-[#85afaa]/40 glow-ring' />
               <span className='absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-[#7ee0a0] border-2 border-[#0a0e13]'></span>
             </div>
-            <div className='leading-tight'>
-              <h1 className='mono text-xl md:text-2xl text-[#a8d4ce] glow-text tracking-wide'>~/TokitoGPT</h1>
-              <p className='mono text-[11px] md:text-xs text-[#85afaa]/70'>
+            <div className='leading-tight min-w-0'>
+              <h1 className='mono text-lg md:text-2xl text-[#a8d4ce] glow-text tracking-wide truncate'>~/TokitoGPT</h1>
+              <p className='mono text-[10px] md:text-xs text-[#85afaa]/70 truncate'>
                 <span className='text-[#7ee0a0]'>●</span> mist-hashira · online
               </p>
             </div>
           </div>
-          <div className='flex items-center gap-3'>
+          <div className='flex items-center gap-3 shrink-0'>
             {!isEmpty && (
               <button
                 onClick={clearChat}
-                className='mono text-xs md:text-sm text-[#85afaa]/80 hover:text-[#a8d4ce] border border-[#85afaa]/25 hover:border-[#85afaa]/60 rounded-md px-3 py-1.5 transition-all'>
+                className='mono text-xs md:text-sm text-[#85afaa]/80 hover:text-[#a8d4ce] border border-[#85afaa]/25 hover:border-[#85afaa]/60 rounded-md px-2.5 py-1.5 transition-all'>
                 ✕ clear
               </button>
             )}
@@ -239,7 +239,7 @@ const App = () => {
         </div>
 
         {/* input row */}
-        <div className='terminal rounded-2xl p-2 flex items-center gap-2 shrink-0'>
+        <div className='terminal rounded-2xl p-2 flex items-center gap-2 shrink-0 min-w-0'>
           <span className='mono text-[#85afaa] pl-3 hidden sm:block shrink-0'>user@you:~$</span>
           <input
             ref={inputRef}
@@ -248,12 +248,12 @@ const App = () => {
             value={input}
             type="text"
             placeholder="type a message..."
-            className='mono bg-transparent text-[#e6eef0] placeholder-gray-600 w-full px-3 sm:px-1 py-3 outline-none' />
+            className='mono bg-transparent text-[#e6eef0] placeholder-gray-600 w-full min-w-0 px-3 sm:px-1 py-3 outline-none' />
 
           <button
             onClick={() => sendmsg()}
             disabled={loading || input.trim() === ""}
-            className='btn-glow shrink-0 px-6 py-3 bg-gradient-to-br from-[#a8d4ce] to-[#85afaa] text-[#0a0e13] font-bold rounded-md disabled:opacity-30 disabled:shadow-none mono'>
+            className='btn-glow shrink-0 px-4 md:px-6 py-3 bg-gradient-to-br from-[#a8d4ce] to-[#85afaa] text-[#0a0e13] font-bold rounded-md disabled:opacity-30 disabled:shadow-none mono'>
             [ send ]
           </button>
         </div>
