@@ -1,16 +1,102 @@
-# React + Vite
+# TokitoGPT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Muichiro Tokito-themed AI chatbot with a retro terminal aesthetic. Built with React, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+![Made by Vikas](https://img.shields.io/badge/made%20by-vikas-85afaa)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Terminal-style chat UI with scanline overlay and blinking caret
+- Animated mist/aurora background with floating particles
+- Pixel-art image rendering via canvas downscaling
+- Chat history persistence across sessions (localStorage)
+- Quick prompt chips for conversation starters
+- Responsive design (mobile + desktop)
+- Error handling with themed fallback messages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+| Layer       | Technology                     |
+|-------------|--------------------------------|
+| Framework   | React 19                       |
+| Build Tool  | Vite 8                         |
+| Styling     | Tailwind CSS 4                 |
+| Language    | JavaScript (JSX)               |
+| Fonts       | Pixelify Sans, Lilita One, Boldonse, Onest |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+### Build
+
+```bash
+npm run build
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```
+chatbot/
+├── public/
+│   ├── favicon.svg          # Vite lightning bolt favicon
+│   └── icons.svg            # SVG sprite (social icons)
+├── src/
+│   ├── App.jsx              # Main chat component + PixelImage renderer
+│   ├── main.jsx             # React entry point
+│   ├── index.css            # Tailwind import, animations, theme variables
+│   ├── assets/              # Static assets (hero.png, react.svg, vite.svg)
+│   └── components/          # (empty — single-file component)
+├── index.html               # HTML shell with Google Fonts preconnects
+├── vite.config.js           # Vite + React + Tailwind plugins
+├── eslint.config.js         # ESLint flat config (React hooks + refresh)
+└── package.json
+```
+
+## API
+
+The chatbot sends messages to a remote backend:
+
+```
+POST https://chatbot-backend-2-crcn.onrender.com/chat
+Body: { "message": "text", "history": [{ "role": "user"|"assistant", "content": "..." }] }
+Response: { "reply": "..." }
+```
+
+## Customization
+
+- **Quick prompts**: Edit the `QUICK_MESSAGES` array in `src/App.jsx`
+- **Theme colors**: Modify CSS variables in `src/index.css` under `:root`
+- **Pixel resolution**: Adjust the `pixelSize` prop on `<PixelImage />`
+- **Fonts**: Update the Google Fonts links in `index.html`
+
+## License
+
+MIT
