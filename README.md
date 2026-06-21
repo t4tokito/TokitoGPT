@@ -2,7 +2,7 @@
 
 A Muichiro Tokito-themed AI chatbot with a retro terminal aesthetic. Built with React, Vite, and Tailwind CSS.
 
-![Made by Vikas](https://img.shields.io/badge/made%20by-vikas-85afaa)
+!t4tokito — tokito-dev.netlify.app
 
 ## Features
 
