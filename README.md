@@ -2,7 +2,7 @@
 
 A Muichiro Tokito-themed AI chatbot with a retro terminal aesthetic. Built with React, Vite, and Tailwind CSS.
 
-t4tokito — (tokito-dev.netlify.app).
+![t4tokito] — (tokito-dev.netlify.app).
 
 ## Features
 
